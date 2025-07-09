@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Glacial Indifference', 'Inter', system-ui, sans-serif;
+    background-color: #f2eacb;
+    color: #222;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold hover:bg-primary-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-lightgray text-blue font-semibold py-3 px-6 rounded-lg border-2 border-gold transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply bg-transparent hover:bg-gold/10 text-blue font-semibold py-3 px-6 rounded-lg border-2 border-gold transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-gold via-blue to-dark;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .countdown-timer {
+    @apply bg-gold/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .bg-light-gray {
+    background-color: #f2eacb;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .text-brand-blue {
+    color: #267d85;
+  }
+  .text-brand-gold {
+    color: #c9a13b;
+  }
+  .bg-brand-gold {
+    background-color: #c9a13b;
+  }
+  .bg-brand-blue {
+    background-color: #267d85;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+  }
+
+  .bg-primary-50 {
+    background-color: #f2eacb;
+  }
+
+  .bg-gold {
+    background-color: #c9a13b;
+  }
+
+  .bg-blue {
+    background-color: #267d85;
+  }
+
+  .text-gold {
+    color: #c9a13b;
+  }
+
+  .text-blue {
+    color: #267d85;
+  }
+
+  .border-gold {
+    border-color: #c9a13b;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Partner Logo Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
