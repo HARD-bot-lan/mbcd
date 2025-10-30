@@ -24,7 +24,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
   }
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="about" className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-20"
+          className="max-w-4xl mx-auto text-center mb-12 sm:mb-20 px-2"
         >
           <motion.div
             variants={itemVariants}
@@ -42,13 +42,13 @@ const About: React.FC<AboutProps> = ({ edition }) => {
           </motion.div>
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6"
           >
             {edition.title} {edition.year}
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 leading-relaxed"
+            className="text-base sm:text-xl text-gray-600 leading-relaxed"
           >
             {edition.description}
           </motion.p>
@@ -60,13 +60,13 @@ const About: React.FC<AboutProps> = ({ edition }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-20"
         >
           {[
             { icon: Users, number: edition.speakers.length + '+', label: 'Expert Speakers' },
-            { icon: Calendar, number: '3', label: 'Days of Learning' },
-            { icon: Clock, number: '20+', label: 'Workshops & Sessions' },
-            { icon: BookOpen, number: '2000+', label: 'Expected Attendees' }
+            { icon: Calendar, number: edition.Learning + '+', label: 'Days of Learning' },
+            { icon: Clock, number: edition.Workshops + '+', label: 'Workshops & Sessions' },
+            { icon: BookOpen, number: edition.Expected_Attendees + '+', label: 'Expected Attendees' }
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -74,31 +74,31 @@ const About: React.FC<AboutProps> = ({ edition }) => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
                   {React.createElement(stat.icon, { className: "w-6 h-6 text-primary-600" })}
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Theme & Vision */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center">
                   <Target className="w-7 h-7 text-primary-600" />
@@ -112,7 +112,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center">
                   <Eye className="w-7 h-7 text-green-600" />
@@ -126,7 +126,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center">
                   <Lightbulb className="w-7 h-7 text-purple-600" />
@@ -149,7 +149,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <div className="flex items-center space-x-4 mb-8">
               <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center">
@@ -165,7 +165,7 @@ const About: React.FC<AboutProps> = ({ edition }) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start space-x-4 bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300"
+                  className="flex items-start space-x-3 sm:space-x-4 bg-gray-50 rounded-xl p-3 sm:p-4 hover:bg-gray-100 transition-colors duration-300"
                 >
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">{highlight}</span>

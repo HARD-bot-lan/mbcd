@@ -22,20 +22,20 @@ const Partners: React.FC<PartnersProps> = ({ edition }) => {
   }, [edition.partners]);
 
   return (
-    <section id="partners" className="section-padding bg-gray-50">
+    <section id="partners" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="container-max">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partners</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Our Partners</h2>
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             We're grateful to our amazing partners who make {edition.title} {edition.year} possible
           </p>
         </div>
 
         {edition.partners.length > 0 ? (
-          <div className="relative overflow-hidden px-4">
+          <div className="relative overflow-hidden px-2 sm:px-4">
             <div 
               ref={containerRef}
-              className={`flex items-center gap-16 ${
+              className={`flex items-center gap-8 sm:gap-16 ${
                 isOverflowing ? 'animate-scroll justify-start' : 'justify-center'
               }`}
               style={isOverflowing ? { width: 'max-content' } : undefined}
@@ -52,7 +52,7 @@ const Partners: React.FC<PartnersProps> = ({ edition }) => {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-20 w-auto object-contain"
+                    className="h-12 sm:h-16 md:h-20 w-auto object-contain"
                     title={partner.name}
                   />
                 </a>
@@ -70,7 +70,7 @@ const Partners: React.FC<PartnersProps> = ({ edition }) => {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-20 w-auto object-contain"
+                    className="h-12 sm:h-16 md:h-20 w-auto object-contain"
                     title={partner.name}
                   />
                 </a>
@@ -78,13 +78,13 @@ const Partners: React.FC<PartnersProps> = ({ edition }) => {
             </div>
           </div>
         ) : (
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div className="mt-12 sm:mt-16 bg-white rounded-2xl p-6 sm:p-8 shadow-lg text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in Partnering?</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto px-2">
               Join our community of forward-thinking organizations and help shape the future of technology. 
               We offer various partnership packages to suit your needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a 
                 href="mailto:blockchaincryptodays@gmail.com"
                 className="btn-primary"
@@ -104,13 +104,13 @@ const Partners: React.FC<PartnersProps> = ({ edition }) => {
 
         {/* Partnership CTA */}
         {edition.partners.length > 0 && (
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div className="mt-12 sm:mt-16 bg-white rounded-2xl p-6 sm:p-8 shadow-lg text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in Partnering?</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto px-2">
               Join our community of forward-thinking organizations and help shape the future of technology. 
               We offer various partnership packages to suit your needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a 
                 href="mailto:blockchaincryptodays@gmail.com"
                 className="btn-primary"

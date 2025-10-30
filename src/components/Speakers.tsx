@@ -60,13 +60,13 @@ const Speakers: React.FC<SpeakersProps> = ({ edition }) => {
               variants={itemVariants}
               className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] max-w-xs"
             >
-                <div className="aspect-w-4 aspect-h-3">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
+                  <div className="aspect-w-4 aspect-h-3">
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
                 
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{speaker.name}</h3>

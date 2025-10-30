@@ -119,7 +119,7 @@ const Footer: React.FC<FooterProps> = ({ edition }) => {
               © {currentYear} Morocco Blockchain & Cryptocurrency Days. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              Made with ❤️ for the tech community
+              Made with ❤️ by Youssef Akhiat
             </p>
           </div>
         </div>

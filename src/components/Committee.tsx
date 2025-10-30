@@ -35,46 +35,35 @@ const Committee: React.FC<CommitteeProps> = ({ edition }) => {
 
         {edition.committee.length > 0 ? (
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className={`grid gap-8 ${
-              edition.committee.length === 1 ? 'md:grid-cols-1 max-w-lg mx-auto' :
-              edition.committee.length === 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' :
-              edition.committee.length === 3 ? 'md:grid-cols-3 max-w-4xl mx-auto' :
-              edition.committee.length === 4 ? 'md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto' :
-              'md:grid-cols-2 lg:grid-cols-3'
-            }`}
-          >
-            {edition.committee.map((member) => (
-              <motion.div
-                key={member.id}
-                variants={itemVariants}
-                className="bg-gray-50 rounded-2xl p-6 text-center card-hover"
-              >
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-8 mx-auto text-center"
+        >
+          {edition.committee.map((member) => (
+            <motion.div
+              key={member.id}
+              variants={itemVariants}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] max-w-xs"
+            >
+              <div className="aspect-w-4 aspect-h-3">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-primary-600 font-medium mb-2">{member.role}</p>
-                <p className="text-gray-600 text-sm mb-4">{member.department}</p>
-                
-                <a
-                  href={`mailto:${member.email}`}
-                  className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span className="text-sm">Contact</span>
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
+                {/*<p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  {member.role}
+                </p>*/}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>        
         ) : (
           <div className="text-center py-16">
             <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">

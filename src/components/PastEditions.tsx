@@ -21,21 +21,21 @@ const PastEditions: React.FC<PastEditionsProps> = ({ pastEditions, className = '
   }
 
   return (
-    <section className={`py-16 bg-gradient-to-b from-gray-50 to-white ${className}`}>
+    <section className={`py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white ${className}`}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Past Editions</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Past Editions</h2>
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             Relive the incredible moments from our previous Morocco Blockchain & Cryptocurrency Days
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {pastEditions.map((edition, index) => (
             <motion.div
               key={edition.year}
@@ -66,12 +66,12 @@ const PastEditions: React.FC<PastEditionsProps> = ({ pastEditions, className = '
                 )}
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="p-5 sm:p-6 space-y-3 sm:space-y-4">
                 <h4 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                   {edition.title}
                 </h4>
                 
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-start text-gray-600 group-hover:text-gray-900 transition-colors duration-300">
                     <Calendar className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5" />
                     <span>{new Date(edition.dates.start).toLocaleDateString()} - {new Date(edition.dates.end).toLocaleDateString()}</span>
@@ -127,7 +127,7 @@ const PastEditions: React.FC<PastEditionsProps> = ({ pastEditions, className = '
               href={pastEditions[0].driveGalleryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
+              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-black px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
             >
               <ExternalLink className="w-5 h-5" />
               <span>View Complete Photo & Video Gallery</span>

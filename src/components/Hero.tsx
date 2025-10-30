@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ edition }) => {
         {/* Background Logo - Single Instance */}
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
           <img 
-            src="/logo1.png" 
+            src="/logo.png" 
             alt="" 
             className="w-full max-w-[800px] object-contain animate-float"
           />
@@ -94,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ edition }) => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="w-20 h-20 md:w-32 md:h-32 mx-auto mb-6 relative"
+            className="w-20 h-20 md:w-32 md:h-32 mx-auto mb-6 relative mt-4"
           >
             <img 
               src="/logo1.png" 
@@ -114,7 +114,7 @@ const Hero: React.FC<HeroProps> = ({ edition }) => {
             transition={{ delay: 0.5 }}
             className="text-2xl md:text-3xl font-light mb-8 text-gray-200"
           >
-            Shaping the Future of a Decentralized World
+            {edition.theme}
           </motion.p>
 
           {/* Event Details */}

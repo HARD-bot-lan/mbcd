@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
           : 'bg-gray-900/80'
       }`}
     >
-      <div className="container-max">
+      <div className="w-full max-w-screen-xl mx-auto">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
           <Link to={`/${currentEdition.year}`} className="flex items-center space-x-2">

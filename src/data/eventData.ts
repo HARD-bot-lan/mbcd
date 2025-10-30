@@ -24,25 +24,28 @@ export const eventData: EventEdition[] = [
       "Workshops: Blockchain Security, Innovation, and Real-World Applications",
       "Networking and Collaboration Opportunities"
     ],
+    Learning: 3,
+    Workshops: 1,
+    Expected_Attendees: 100,
     speakers: [
       {
         id: "lahbib",
         name: "Farah LAHBIB",
         title: "Director in charge of Trade Finance and Credit",
         company: "Office Chérifien des Phosphates Group - OCP",
-        image: "/images/FarahLahbib.jpg",
-        bio:"",
+        image: "/editions pic/2024/Speakers/FarahLahbib.jpg",
+        bio: "",
         expertise: ["Trade Finance", "Blockchain", "Corporate Treasury"],
         social: {}
       },
       {
         id: "hiba",
         name: "Hiba AFAILAL",
-        title: "Bank Al-Maghrib",
+        title: "Representative",
         company: "Bank Al-Maghrib",
+        image: "/editions pic/2024/Speakers/HIBA.jpeg",
         bio: "",
-        image: "/images/HIBA.jpeg",
-        expertise: ["Blockchain", "Finance"],
+        expertise: ["Blockchain", "Finance", "Regulation"],
         social: {}
       },
       {
@@ -50,8 +53,8 @@ export const eventData: EventEdition[] = [
         name: "Asmaa ELMRINI",
         title: "Organizational and AMOA Manager",
         company: "TMPA, Tanger MED",
-        bio:"",
-        image: "/images/asmaa.jpg",
+        image: "/editions pic/2024/Speakers/asmaa.jpg",
+        bio: "",
         expertise: ["Logistics", "Blockchain", "Digitalization"],
         social: {}
       },
@@ -60,32 +63,102 @@ export const eventData: EventEdition[] = [
         name: "Anass El ALAOUI EL BAHI",
         title: "Digital Transformation Manager",
         company: "Caisse Marocaine de Retraite - CMR",
-        bio:"",
-        image: "/images/ANASSELBAHI.jpg",
+        image: "/editions pic/2024/Speakers/ANASSELBAHI.jpg",
+        bio: "",
         expertise: ["Digital Transformation", "Blockchain", "Public Sector"],
         social: {}
       },
       {
-        id: "anass",
-        name: "Anass El ALAOUI EL BAHI",
-        title: "Digital Transformation Manager",
-        company: "Caisse Marocaine de Retraite - CMR",
-        bio:"",
-        image: "/images/ANASSELBAHI.jpg",
-        expertise: ["Digital Transformation", "Blockchain", "Public Sector"],
+        id: "khalid",
+        name: "Khalid MADIDI",
+        title: "Financial & Trade Risk Manager, Group Credit Risk Management & Trade Finance",
+        company: "OCP Group",
+        image: "/editions pic/2024/Speakers/madidi.jpg", 
+        bio: "",
+        expertise: ["Trade Finance", "Risk Management", "Blockchain"],
         social: {}
       },
       {
-        id: "anass",
-        name: "Anass El ALAOUI EL BAHI",
-        title: "Digital Transformation Manager",
-        company: "Caisse Marocaine de Retraite - CMR",
-        bio:"",
-        image: "/images/ANASSELBAHI.jpg",
-        expertise: ["Digital Transformation", "Blockchain", "Public Sector"],
+        id: "bella",
+        name: "Badr BELLAJ",
+        title: "CTO",
+        company: "MCHAIN",
+        image: "/editions pic/2024/Speakers/BELLAJ.jpg",
+        bio: "",
+        expertise: ["Blockchain Infrastructure", "Web3", "Enterprise Blockchain"],
+        social: {}
+      },
+      {
+        id: "sara",
+        name: "Sara TUCCI-PIERGIOVANNI",
+        title: "Head of Laboratory CEA LIST",
+        company: "University Paris-Saclay",
+        image: "/editions pic/2024/Speakers/SARA.jpg",
+        bio: "",
+        expertise: ["Trusted Computing", "Blockchain Research", "Digital Identity"],
+        social: {}
+      },
+      {
+        id: "peter",
+        name: "Peter ROBINSON",
+        title: "Head of Blockchain Research",
+        company: "Immutable, Brisbane, Australia",
+        image: "/editions pic/2024/Speakers/PETER.jpeg",
+        bio: "",
+        expertise: ["NFTs", "Gaming Blockchain", "Scalable L2 Solutions"],
+        social: {}
+      },
+      {
+        id: "amani",
+        name: "Amani ALTARAWNEH",
+        title: "Professor",
+        company: "Tennessee Tech University, Cookeville, USA",
+        image: "/editions pic/2024/Speakers/AMANI.png",
+        bio: "",
+        expertise: ["Cybersecurity", "Blockchain Security", "Academic Research"],
+        social: {}
+      },
+      {
+        id: "sofia",
+        name: "SOFIA ELMRABET",
+        title: "Fintech & Tech Lawyer",
+        company: "Pledge Avocats, Paris, France",
+        image: "/editions pic/2024/Speakers/sofia.jpg",
+        bio: "",
+        expertise: ["Regulation", "Crypto Law", "Compliance"],
+        social: {}
+      },
+      {
+        id: "hicham",
+        name: "Hicham Benbella",
+        title: "Representative",
+        company: "ORACLE",
+        image: "/editions pic/2024/Speakers/imgi_16_HICHAM.png",
+        bio: "",
+        expertise: ["Enterprise Systems", "Blockchain Integration", "Cloud"],
+        social: {}
+      },
+      {
+        id: "ilham",
+        name: "Ilham EL BOULOUMI",
+        title: "Chainlink Community Advocate",
+        company: "DataChainEd / Chainlink",
+        image: "/editions pic/2024/Speakers/imgi_17_ilham.jpg",
+        bio: "",
+        expertise: ["Decentralized Oracles", "Web3 Education", "Developer Advocacy"],
+        social: {}
+      },
+      {
+        id: "karim",
+        name: "Karim ZKIK",
+        title: "Professor",
+        company: "School of Business, Rennes, France",
+        image: "/editions pic/2024/Speakers/imgi_18_karim.jpg",
+        bio: "",
+        expertise: ["Digital Economy", "Blockchain Strategy", "Innovation Management"],
         social: {}
       }
-    ],
+    ],    
     agenda: [
       {
         id: "ctf",
@@ -116,34 +189,36 @@ export const eventData: EventEdition[] = [
       }
     ],
     media: [
-      {
-        id: "1",
-        type: "image",
-        url: "/logo1.png",
-        title: "Opening Ceremony",
-        description: "Keynote speech by our distinguished guest"
-      },
-      {
-        id: "2",
-        type: "image",
-        url: "/images/FarahLahbib.jpg",
-        title: "Keynote Speaker",
-        description: "Mrs. Farah Lahbib discussing blockchain in trade finance"
-      },
-      {
-        id: "3",
-        type: "image",
-        url: "/images/HIBA.jpeg",
-        title: "Bank Al-Maghrib Presentation",
-        description: "Hiba AFAILAL presenting regulatory perspectives"
-      },
-      {
-        id: "4",
-        type: "image",
-        url: "/images/asmaa.jpg",
-        title: "Industry Insights",
-        description: "Asmaa ELMRINI sharing insights on blockchain in logistics"
-      }
+      { id: "1", type: "image", url: "/editions pic/2024/1 (1).JPG", title: "Event Photo 1", description: "" },
+      { id: "2", type: "image", url: "/editions pic/2024/1 (2).JPG", title: "Event Photo 2", description: "" },
+      { id: "3", type: "image", url: "/editions pic/2024/1 (3).JPG", title: "Event Photo 3", description: "" },
+      { id: "4", type: "image", url: "/editions pic/2024/1 (4).JPG", title: "Event Photo 4", description: "" },
+      { id: "5", type: "image", url: "/editions pic/2024/1 (5).JPG", title: "Event Photo 5", description: "" },
+      { id: "6", type: "image", url: "/editions pic/2024/1 (6).JPG", title: "Event Photo 6", description: "" },
+      { id: "7", type: "image", url: "/editions pic/2024/1 (7).JPG", title: "Event Photo 7", description: "" },
+      { id: "8", type: "image", url: "/editions pic/2024/1 (8).JPG", title: "Event Photo 8", description: "" },
+      { id: "9", type: "image", url: "/editions pic/2024/1 (9).JPG", title: "Event Photo 9", description: "" },
+      { id: "10", type: "image", url: "/editions pic/2024/1 (10).JPG", title: "Event Photo 10", description: "" },
+      { id: "11", type: "image", url: "/editions pic/2024/1 (11).JPG", title: "Event Photo 11", description: "" },
+      { id: "12", type: "image", url: "/editions pic/2024/1 (12).JPG", title: "Event Photo 12", description: "" },
+      { id: "13", type: "image", url: "/editions pic/2024/1 (13).JPG", title: "Event Photo 13", description: "" },
+      { id: "14", type: "image", url: "/editions pic/2024/1 (14).JPG", title: "Event Photo 14", description: "" },
+      { id: "15", type: "image", url: "/editions pic/2024/1 (15).JPG", title: "Event Photo 15", description: "" },
+      { id: "16", type: "image", url: "/editions pic/2024/1 (16).JPG", title: "Event Photo 16", description: "" },
+      { id: "17", type: "image", url: "/editions pic/2024/1 (17).JPG", title: "Event Photo 17", description: "" },
+      { id: "18", type: "image", url: "/editions pic/2024/1 (18).JPG", title: "Event Photo 18", description: "" },
+      { id: "19", type: "image", url: "/editions pic/2024/1 (19).JPG", title: "Event Photo 19", description: "" },
+      { id: "20", type: "image", url: "/editions pic/2024/1 (20).JPG", title: "Event Photo 20", description: "" },
+      { id: "21", type: "image", url: "/editions pic/2024/1 (21).JPG", title: "Event Photo 21", description: "" },
+      { id: "22", type: "image", url: "/editions pic/2024/1 (22).JPG", title: "Event Photo 22", description: "" },
+      { id: "23", type: "image", url: "/editions pic/2024/1 (23).JPG", title: "Event Photo 23", description: "" },
+      { id: "24", type: "image", url: "/editions pic/2024/1 (24).JPG", title: "Event Photo 24", description: "" },
+      { id: "25", type: "image", url: "/editions pic/2024/1 (25).JPG", title: "Event Photo 25", description: "" },
+      { id: "26", type: "image", url: "/editions pic/2024/1 (26).JPG", title: "Event Photo 26", description: "" },
+      { id: "27", type: "image", url: "/editions pic/2024/1 (27).JPG", title: "Event Photo 27", description: "" },
+      { id: "28", type: "image", url: "/editions pic/2024/1 (28).JPG", title: "Event Photo 28", description: "" },
+      { id: "29", type: "image", url: "/editions pic/2024/1 (29).JPG", title: "Event Photo 29", description: "" },
+      { id: "30", type: "image", url: "/editions pic/2024/1 (30).JPG", title: "Event Photo 30", description: "" }
     ],
     driveGalleryUrl: "https://drive.google.com/drive/folders/your-folder-id",
     committee: [
@@ -153,7 +228,7 @@ export const eventData: EventEdition[] = [
         role: "General Chair",
         department: "INPT, Rabat",
         email: "",
-        image: "/images/afaf.jpeg"
+        image: "/editions pic/2024/commitee/afaf.jpeg"
       },
       {
         id: "zaidouni",
@@ -161,9 +236,117 @@ export const eventData: EventEdition[] = [
         role: "Organisation Committee",
         department: "INPT, Rabat",
         email: "",
-        image: "/images/Dounia.jpeg"
+        image: "/editions pic/2024/commitee/Dounia.jpeg"
+      },
+      {
+        id: "bousselam",
+        name: "Kaouthar BOUSSELAM",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/Kaouthar.jpeg"
+      },
+      {
+        id: "elasri",
+        name: "Ikram EL ASRI",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/ikram.png"
+      },
+      {
+        id: "hanin",
+        name: "Charifa HANIN",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/charifa.jpg"
+      },
+      {
+        id: "benomar",
+        name: "Aziza BENOMAR",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/aziza.jpeg"
+      },
+      {
+        id: "bounouader",
+        name: "Nawal BOUNOUADER",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/nawal.png"
+      },
+      {
+        id: "elakkaoui",
+        name: "Zineb EL AKKAOUI",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/Zineb.jpeg"
+      },
+      {
+        id: "chafnaji",
+        name: "Houda CHAFNAJI",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/houda.jpg"
+      },
+      {
+        id: "radgui",
+        name: "Amina RADGUI",
+        role: "Organisation Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/radgui.jpg"
+      },
+    
+      // 🔵 CTF Committee
+      {
+        id: "belmekki-abdelhamid",
+        name: "Abdelhamid BELMEKKI",
+        role: "CTF Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/fallbackimg.png"
+      },
+      {
+        id: "belmekki-elmostafa",
+        name: "EL Mostafa BELMEKKI",
+        role: "CTF Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/elmostafa.jpg"
+      },
+      {
+        id: "idrissi",
+        name: "Hamza KAMAL IDRISSI",
+        role: "CTF Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/idrissi.jpeg"
+      },
+    
+      // 🟣 Media & Communication Committee
+      {
+        id: "karakchou",
+        name: "Leila KARAKCHOU",
+        role: "Media & Communication Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/karakchou.jpg"
+      },
+      {
+        id: "gangaffou",
+        name: "Nora GANGAFFOU",
+        role: "Media & Communication Committee",
+        department: "INPT, Rabat",
+        email: "",
+        image: "/editions pic/2024/commitee/fallbackimg.png"
       }
-    ],
+    ],    
     partners: [
       {
         id: "inpt",
@@ -198,7 +381,7 @@ export const eventData: EventEdition[] = [
     newsletterSignup: false,
     contactEmail: "blockchaincryptodays@gmail.com",
     pastEditions: [],
-    agendaPdfUrl: "",
+    agendaPdfUrl: ""
   },
   {
     year: 2025,
@@ -206,19 +389,22 @@ export const eventData: EventEdition[] = [
     title: "Morocco Blockchain & Cryptocurrency Days",
     subtitle: "To Be Announced",
     dates: {
-      start: "2025-02-XX",
-      end: "2025-02-XX"
+      start: "2025-02-15",
+      end: "2025-02-28"
     },
     location: {
-      venue: "To Be Announced",
-      city: "To Be Announced",
+      venue: "INPT, Av. Allal Al Fassi",
+      city: "Rabat",
       country: "Morocco"
     },
-    theme: "To Be Announced",
+    theme: "Shaping the Future of a Decentralized World",
     status: "current",
     description: "Details for the 2025 edition will be announced soon. Stay tuned for more information about Morocco's leading blockchain and cryptocurrency event!",
     highlights: [],
     speakers: [],
+    Learning: 0,
+    Workshops: 0,
+    Expected_Attendees: 0,
     agenda: [],
     committee: [],
     partners: [],
@@ -253,39 +439,40 @@ export const eventData: EventEdition[] = [
           "Networking and Collaboration Opportunities"
         ],
         media: [
-          {
-            id: "1",
-            type: "image",
-            url: "/logo1.png",
-            title: "Opening Ceremony",
-            description: "Keynote speech by our distinguished guest"
-          },
-          {
-            id: "2",
-            type: "image",
-            url: "/images/FarahLahbib.jpg",
-            title: "Keynote Speaker",
-            description: "Mrs. Farah Lahbib discussing blockchain in trade finance"
-          },
-          {
-            id: "3",
-            type: "image",
-            url: "/images/HIBA.jpeg",
-            title: "Bank Al-Maghrib Presentation",
-            description: "Hiba AFAILAL presenting regulatory perspectives"
-          },
-          {
-            id: "4",
-            type: "image",
-            url: "/images/asmaa.jpg",
-            title: "Industry Insights",
-            description: "Asmaa ELMRINI sharing insights on blockchain in logistics"
-          }
-        ],
+          { id: "1", type: "image", url: "/editions pic/2024/1 (1).JPG", title: "Event Photo 1", description: "" },
+          { id: "2", type: "image", url: "/editions pic/2024/1 (2).JPG", title: "Event Photo 2", description: "" },
+          { id: "3", type: "image", url: "/editions pic/2024/1 (3).JPG", title: "Event Photo 3", description: "" },
+          { id: "4", type: "image", url: "/editions pic/2024/1 (4).JPG", title: "Event Photo 4", description: "" },
+          { id: "5", type: "image", url: "/editions pic/2024/1 (5).JPG", title: "Event Photo 5", description: "" },
+          { id: "6", type: "image", url: "/editions pic/2024/1 (6).JPG", title: "Event Photo 6", description: "" },
+          { id: "7", type: "image", url: "/editions pic/2024/1 (7).JPG", title: "Event Photo 7", description: "" },
+          { id: "8", type: "image", url: "/editions pic/2024/1 (8).JPG", title: "Event Photo 8", description: "" },
+          { id: "9", type: "image", url: "/editions pic/2024/1 (9).JPG", title: "Event Photo 9", description: "" },
+          { id: "10", type: "image", url: "/editions pic/2024/1 (10).JPG", title: "Event Photo 10", description: "" },
+          { id: "11", type: "image", url: "/editions pic/2024/1 (11).JPG", title: "Event Photo 11", description: "" },
+          { id: "12", type: "image", url: "/editions pic/2024/1 (12).JPG", title: "Event Photo 12", description: "" },
+          { id: "13", type: "image", url: "/editions pic/2024/1 (13).JPG", title: "Event Photo 13", description: "" },
+          { id: "14", type: "image", url: "/editions pic/2024/1 (14).JPG", title: "Event Photo 14", description: "" },
+          { id: "15", type: "image", url: "/editions pic/2024/1 (15).JPG", title: "Event Photo 15", description: "" },
+          { id: "16", type: "image", url: "/editions pic/2024/1 (16).JPG", title: "Event Photo 16", description: "" },
+          { id: "17", type: "image", url: "/editions pic/2024/1 (17).JPG", title: "Event Photo 17", description: "" },
+          { id: "18", type: "image", url: "/editions pic/2024/1 (18).JPG", title: "Event Photo 18", description: "" },
+          { id: "19", type: "image", url: "/editions pic/2024/1 (19).JPG", title: "Event Photo 19", description: "" },
+          { id: "20", type: "image", url: "/editions pic/2024/1 (20).JPG", title: "Event Photo 20", description: "" },
+          { id: "21", type: "image", url: "/editions pic/2024/1 (21).JPG", title: "Event Photo 21", description: "" },
+          { id: "22", type: "image", url: "/editions pic/2024/1 (22).JPG", title: "Event Photo 22", description: "" },
+          { id: "23", type: "image", url: "/editions pic/2024/1 (23).JPG", title: "Event Photo 23", description: "" },
+          { id: "24", type: "image", url: "/editions pic/2024/1 (24).JPG", title: "Event Photo 24", description: "" },
+          { id: "25", type: "image", url: "/editions pic/2024/1 (25).JPG", title: "Event Photo 25", description: "" },
+          { id: "26", type: "image", url: "/editions pic/2024/1 (26).JPG", title: "Event Photo 26", description: "" },
+          { id: "27", type: "image", url: "/editions pic/2024/1 (27).JPG", title: "Event Photo 27", description: "" },
+          { id: "28", type: "image", url: "/editions pic/2024/1 (28).JPG", title: "Event Photo 28", description: "" },
+          { id: "29", type: "image", url: "/editions pic/2024/1 (29).JPG", title: "Event Photo 29", description: "" },
+          { id: "30", type: "image", url: "/editions pic/2024/1 (30).JPG", title: "Event Photo 30", description: "" }
+        ],        
         driveGalleryUrl: "https://drive.google.com/drive/folders/your-folder-id",
         summary: "The 2024 edition brought together international experts, industry leaders, policymakers, entrepreneurs, and academics for three days of keynotes, panels, workshops, and a CTF competition, all focused on blockchain and cryptocurrency innovation in Morocco.",
         agendaPdfUrl: "/agendas/2024-detailed-agenda.pdf"
-        
       }
     ]
   }

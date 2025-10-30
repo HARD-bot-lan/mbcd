@@ -7,12 +7,21 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    width: 100%;
   }
   
   body {
     font-family: 'Glacial Indifference', 'Inter', system-ui, sans-serif;
     background-color: #f2eacb;
     color: #222;
+    overflow-x: hidden; /* Prevent horizontal scroll from overflowing elements */
+    width: 100%;
+  }
+  
+  #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 

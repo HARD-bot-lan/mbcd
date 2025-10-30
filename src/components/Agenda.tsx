@@ -54,7 +54,7 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
   return (
     <motion.section 
       id="agenda" 
-      className="section-padding bg-white"
+      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -68,8 +68,8 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Event Agenda</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Event Agenda</h2>
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             Explore our comprehensive schedule of keynotes, sessions, workshops, and networking opportunities
           </p>
         </motion.div>
@@ -93,10 +93,10 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
                   transition={{ delay: index * 0.1, duration: 0.4 }}
                   className="relative"
                 >
-                  <div className="flex items-start space-x-6">
+                  <div className="flex items-start gap-4 sm:gap-6">
                     {/* Time */}
                     <motion.div 
-                      className="flex-shrink-0 w-32 text-right"
+                      className="hidden sm:block flex-shrink-0 w-32 text-right"
                       whileHover={{ scale: 1.05 }}
                     >
                       <motion.div 
@@ -113,12 +113,17 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
 
                     {/* Content */}
                     <motion.div 
-                      className="flex-1 bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                      className="flex-1 bg-white border border-gray-200 rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow"
                       whileHover={{ scale: 1.01, boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                     >
-                      <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-start justify-between mb-3 sm:mb-4">
                         <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
+                          {/* Mobile date display */}
+                          <div className="sm:hidden flex items-center text-xs text-gray-500 mb-2">
+                            <Calendar className="w-4 h-4 mr-2" />
+                            <span>{formatDate(item.time)}</span>
+                          </div>
+                          <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
                             <span className="text-2xl">{getTypeIcon(item.type)}</span>
                             <motion.span 
                               className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(item.type)}`}
@@ -133,8 +138,8 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
                               {item.track}
                             </motion.span>
                           </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                          <p className="text-gray-600 mb-4">{item.description}</p>
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                          <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{item.description}</p>
                         </div>
                       </div>
 

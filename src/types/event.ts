@@ -100,6 +100,9 @@ export interface EventEdition {
   status: 'past' | 'current' | 'upcoming'
   description: string
   highlights: string[]
+  Expected_Attendees: number
+  Learning: number
+  Workshops: number
   speakers: Speaker[]
   agenda: AgendaItem[]
   committee: CommitteeMember[]
