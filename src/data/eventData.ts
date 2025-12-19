@@ -389,23 +389,59 @@ export const eventData: EventEdition[] = [
     title: "Morocco Blockchain & Cryptocurrency Days",
     subtitle: "To Be Announced",
     dates: {
-      start: "2025-02-15",
-      end: "2025-02-28"
+      start: "2026-01-10",
+      end: "2026-01-15"
     },
     location: {
       venue: "INPT, Av. Allal Al Fassi",
       city: "Rabat",
       country: "Morocco"
     },
-    theme: "Shaping the Future of a Decentralized World",
+    theme: "Blockchain Power: Building Secure, Transparent and Trusted Digital Systems",
     status: "current",
-    description: "Details for the 2025 edition will be announced soon. Stay tuned for more information about Morocco's leading blockchain and cryptocurrency event!",
-    highlights: [],
-    speakers: [],
-    Learning: 0,
-    Workshops: 0,
+    description: "The theme, 'Blockchain Power', highlights how this technology builds secure, transparent, and trusted digital systems by providing a tamper-proof foundation that enhances operational resilience, cybersecurity, and digital identity across all major sectors.",
+    highlights: [
+      "Capture The Flag (CTF) Competition hosted by SecDojo",
+      "Keynotes: Blockchain, Crypto, Regulatory, Business, and Tech Perspectives",
+      "Panel Q&A: Revolutionizing Trade Finance and Industries Through Blockchain",
+      "Workshops: Blockchain Security, Innovation, and Real-World Applications",
+      "Networking and Collaboration Opportunities"
+    ],
+    speakers: [
+      {
+        id: "lahbib",
+        name: "Farah LAHBIB",
+        title: "Director in charge of Trade Finance and Credit",
+        company: "Office Chérifien des Phosphates Group - OCP",
+        image: "/editions pic/2024/Speakers/FarahLahbib.jpg",
+        bio: "",
+        expertise: ["Trade Finance", "Blockchain", "Corporate Treasury"],
+        social: {}
+      }
+    ],
+    Learning: 2,
+    Workshops: 2,
     Expected_Attendees: 0,
-    agenda: [],
+    agenda: [
+      {
+        id: "ctf",
+        time: "2026-01-10",
+        title: "Capture The Flag (CTF) Competition",
+        description: "Hosted by SecDojo. A flagship event designed to challenge and inspire participants to demonstrate their technical expertise in security and related fields. Prizes for top teams.",
+        room: "INPT Campus",
+        track: "Competition",
+        type: "session"
+      },
+      {
+        id: "conf and workshop",
+        time: "2026-01-15",
+        title: "Conference & Workshops",
+        description: "Keynotes, panels, and open Q&A on blockchain, crypto, regulatory, business, and tech perspectives. Speakers from OCP, Bank Al-Maghrib, MCHAIN, Immutable, TMPA Tanger MED, and more.",
+        room: "INPT, Rabat",
+        track: "Conference",
+        type: "session"
+      }
+    ],
     committee: [],
     partners: [],
     tickets: [],

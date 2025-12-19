@@ -89,88 +89,68 @@ const About: React.FC<AboutProps> = ({ edition }) => {
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
-          {/* Theme & Vision */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {/* Mission Card */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4 sm:space-y-6"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
           >
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center">
-                  <Target className="w-7 h-7 text-primary-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Target className="w-7 h-7 text-primary-600" />
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                To bring together the brightest minds in blockchain and cryptocurrency to share knowledge, 
-                foster innovation, and shape the future of decentralized technologies through 
-                meaningful connections and groundbreaking insights.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
             </div>
-
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center">
-                  <Eye className="w-7 h-7 text-green-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                To be Morocco's premier platform where blockchain leaders, innovators, and 
-                visionaries converge to explore emerging trends, discuss challenges, 
-                and collaborate on solutions that will define tomorrow's decentralized landscape.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center">
-                  <Lightbulb className="w-7 h-7 text-purple-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">{edition.year} Theme</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                <span className="font-semibold text-primary-600">{edition.theme}</span>
-                <br />
-                <span className="mt-2 block">
-                  {edition.description}
-                </span>
-              </p>
-            </div>
+            <p className="text-gray-600 leading-relaxed flex-grow">
+              To bring together the brightest minds in blockchain and cryptocurrency to share knowledge,
+              foster innovation, and shape the future of decentralized technologies through
+              meaningful connections and groundbreaking insights.
+            </p>
           </motion.div>
 
-          {/* Key Highlights */}
+          {/* Vision Card */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
           >
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center">
-                <CheckCircle className="w-7 h-7 text-green-600" />
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Eye className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Key Highlights</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
             </div>
-            <div className="space-y-6">
-              {edition.highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start space-x-3 sm:space-x-4 bg-gray-50 rounded-xl p-3 sm:p-4 hover:bg-gray-100 transition-colors duration-300"
-                >
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 leading-relaxed">{highlight}</span>
-                </motion.div>
-              ))}
+            <p className="text-gray-600 leading-relaxed flex-grow">
+              To be Morocco's premier platform where blockchain leaders, innovators, and
+              visionaries converge to explore emerging trends, discuss challenges,
+              and collaborate on solutions that will define tomorrow's decentralized landscape.
+            </p>
+          </motion.div>
+
+          {/* Theme Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
+          >
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Lightbulb className="w-7 h-7 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">{edition.year} Theme</h3>
+            </div>
+            <div className="text-gray-600 leading-relaxed flex-grow">
+              <span className="font-semibold text-primary-600 block mb-2">{edition.theme}</span>
+              <p>
+                {edition.description}
+              </p>
             </div>
           </motion.div>
         </div>

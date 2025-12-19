@@ -9,8 +9,14 @@
     scroll-behavior: smooth;
     overflow-x: hidden; /* Prevent horizontal scroll on mobile */
     width: 100%;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
   }
   
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
   body {
     font-family: 'Glacial Indifference', 'Inter', system-ui, sans-serif;
     background-color: #f2eacb;

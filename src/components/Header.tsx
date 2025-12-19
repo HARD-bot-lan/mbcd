@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import { EventEdition } from '../types/event'
 import { eventData } from '../data/eventData'
 
@@ -14,6 +14,13 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
   const [isEditionsOpen, setIsEditionsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const navigate = useNavigate()
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,32 +58,24 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' 
-          : 'bg-gray-900/80'
-      }`}
-    >
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+              isScrolled
+                ? 'bg-gray-900/50 backdrop-blur-md shadow-lg'
+                : 'bg-transparent'
+            }`}    >
       <div className="w-full max-w-screen-xl mx-auto">
-        <div className="flex items-center justify-between h-16 px-4">
-          {/* Logo */}
-          <Link to={`/${currentEdition.year}`} className="flex items-center space-x-2">
-            <img 
-              src="/logo.png" 
-              alt="Event Logo" 
-              className="h-10 w-auto object-contain"
-            />
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-lg text-white">
-                {currentEdition.title}
-              </h1>
-              <p className="text-sm text-gray-300">
-                {currentEdition.year}
-              </p>
-            </div>
-          </Link>
+        <div className="flex items-center justify-center h-16 px-4 relative">
+          {/* Mobile Menu Button - Positioned absolutely on the right */}
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg text-gray-300 transition-colors hover:bg-gray-800"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
 
-          {/* Desktop Navigation */}
+          {/* Centered Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -87,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
                 {item.label}
               </button>
             ))}
-            
+
             {/* Editions Dropdown */}
             <div className="relative">
               <button
@@ -97,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
                 <span>Editions</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              
+
               <AnimatePresence>
                 {isEditionsOpen && (
                   <motion.div
@@ -133,13 +132,8 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-300 transition-colors hover:bg-gray-800"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* For mobile, the nav is hidden, so this will just be an empty div, which is fine */}
+          {/* This structure keeps the nav centered */}
         </div>
 
         {/* Mobile Menu */}
@@ -190,6 +184,11 @@ const Header: React.FC<HeaderProps> = ({ currentEdition }) => {
           )}
         </AnimatePresence>
       </div>
+      {/* Progress Bar */}
+      <motion.div
+        className="h-1 bg-gold origin-left"
+        style={{ scaleX }}
+      />
     </motion.header>
   )
 }

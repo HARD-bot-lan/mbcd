@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Clock, MapPin, User, Calendar } from 'lucide-react'
+import { Clock, MapPin, User, Calendar, Mic, Briefcase, Wrench, Coffee, Users2 } from 'lucide-react'
 import { EventEdition } from '../types/event'
 
 interface AgendaProps {
@@ -37,17 +37,17 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'keynote':
-        return '🎤'
+        return <Mic className="w-5 h-5 text-purple-600" />;
       case 'session':
-        return '💼'
+        return <Briefcase className="w-5 h-5 text-blue-600" />;
       case 'workshop':
-        return '🛠️'
+        return <Wrench className="w-5 h-5 text-green-600" />;
       case 'break':
-        return '☕'
+        return <Coffee className="w-5 h-5 text-gray-600" />;
       case 'networking':
-        return '🤝'
+        return <Users2 className="w-5 h-5 text-orange-600" />;
       default:
-        return '📅'
+        return <Calendar className="w-5 h-5 text-gray-600" />;
     }
   }
 
@@ -68,100 +68,115 @@ const Agenda: React.FC<AgendaProps> = ({ edition }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Event Agenda</h2>
-          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
-            Explore our comprehensive schedule of keynotes, sessions, workshops, and networking opportunities
-          </p>
-        </motion.div>
-
-        {/* Timeline View */}
-        <div className="max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div 
-              className="space-y-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              {edition.agenda.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="relative"
-                >
-                  <div className="flex items-start gap-4 sm:gap-6">
-                    {/* Time */}
-                    <motion.div 
-                      className="hidden sm:block flex-shrink-0 w-32 text-right"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <motion.div 
-                        className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-2 ml-auto"
-                        whileHover={{ 
-                          scale: 1.1,
-                          backgroundColor: '#E1F5FE'
-                        }}
+                    <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight">Event Agenda</h2>
+                    <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
+                      Explore our comprehensive schedule of keynotes, sessions, workshops, and networking opportunities.
+                      Each event is carefully curated to provide valuable insights and foster collaboration.
+                    </p>
+                  </motion.div>
+          
+                  {/* Timeline View */}
+                  <div className="max-w-4xl mx-auto relative pt-8">
+                    {/* Vertical timeline line */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
+          
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        className="space-y-12" // Increased space between items
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
                       >
-                        <Calendar className="w-5 h-5 text-primary-600" />
+                        {edition.agenda.map((item, index) => {
+                          const isCardOnLeft = index % 2 !== 0;
+
+                          const TimeBlock = (
+                            <div>
+                              <div className="text-xl font-bold text-gray-900">{formatDate(item.time)}</div> {/* Only date now */}
+                            </div>
+                          );
+
+                          const ContentCard = (
+                            <motion.div
+                              className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-300 relative z-0 w-full"
+                              whileHover={{ scale: 1.01 }}
+                            >
+                              <div className="flex items-start mb-3 sm:mb-4">
+                                <div className="flex-1">
+                                  {/* Mobile date display */}
+                                  <div className="sm:hidden flex items-center text-xs text-gray-500 mb-2">
+                                    <Clock className="w-4 h-4 mr-2" />
+                                    <span>{formatDate(item.time)}</span> {/* Only date now */}
+                                  </div>
+                                  <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
+                                    <span>{getTypeIcon(item.type)}</span>
+                                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(item.type)}`}>
+                                      {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                                    </span>
+                                    {item.track && (
+                                      <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                                        {item.track}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{item.description}</p>
+                                </div>
+                              </div>
+                              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                                {item.room && (
+                                  <div className="flex items-center space-x-2">
+                                    <MapPin className="w-4 h-4" />
+                                    <span>{item.room}</span>
+                                  </div>
+                                )}
+                                {item.speaker && (
+                                  <div className="flex items-center space-x-2">
+                                    <User className="w-4 h-4" />
+                                    <span>{item.speaker}</span>
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          );
+
+                          return (
+                            <motion.div
+                              key={item.id}
+                              initial={{ opacity: 0, y: 50 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true, amount: 0.2 }}
+                              transition={{ delay: index * 0.1, duration: 0.6 }}
+                              className="relative"
+                            >
+                              {/* Mobile View */}
+                              <div className="sm:hidden">
+                                <div className="text-center mb-4">{TimeBlock}</div>
+                                {ContentCard}
+                              </div>
+
+                              {/* Desktop View */}
+                              <div className="hidden sm:flex items-start">
+                                {/* Left Side */}
+                                <div className="w-1/2 pr-8 flex justify-end text-right">
+                                  {isCardOnLeft ? ContentCard : TimeBlock}
+                                </div>
+                                {/* Timeline Dot */}
+                                <div className="absolute left-1/2 top-0 transform -translate-x-1/2 z-10">
+                                  <div className="w-4 h-4 bg-primary-500 rounded-full ring-4 ring-primary-100"></div>
+                                </div>
+                                {/* Right Side */}
+                                <div className="w-1/2 pl-8 flex justify-start">
+                                  {isCardOnLeft ? TimeBlock : ContentCard}
+                                </div>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
                       </motion.div>
-                      <div className="text-sm font-medium text-gray-900">{formatDate(item.time)}</div>
-                    </motion.div>
-
-                    {/* Content */}
-                    <motion.div 
-                      className="flex-1 bg-white border border-gray-200 rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow"
-                      whileHover={{ scale: 1.01, boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-                    >
-                      <div className="flex items-start justify-between mb-3 sm:mb-4">
-                        <div className="flex-1">
-                          {/* Mobile date display */}
-                          <div className="sm:hidden flex items-center text-xs text-gray-500 mb-2">
-                            <Calendar className="w-4 h-4 mr-2" />
-                            <span>{formatDate(item.time)}</span>
-                          </div>
-                          <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
-                            <span className="text-2xl">{getTypeIcon(item.type)}</span>
-                            <motion.span 
-                              className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(item.type)}`}
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
-                            </motion.span>
-                            <motion.span 
-                              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              {item.track}
-                            </motion.span>
-                          </div>
-                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                          <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{item.description}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                        {item.room && (
-                          <motion.div 
-                            className="flex items-center space-x-2"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            <MapPin className="w-4 h-4" />
-                            <span>{item.room}</span>
-                          </motion.div>
-                        )}
-                      </div>
-                    </motion.div>
+                    </AnimatePresence>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
         {/* Download Button */}
         {edition.agendaPdfUrl && (
           <motion.div 
